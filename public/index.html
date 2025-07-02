@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Surat Otomatis</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="icon.ico" type="image/x-icon" sizes="150x150" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="container">
+    <div class="card">
+      <h1>✍️ AI Pembuat Surat</h1>
+
+      <p class="desc">Masukkan data di bawah ini. Surat akan dibuat oleh AI secara otomatis.</p>
+
+        
+
+
+      <form id="suratForm">
+
+          <div class="input-group">
+            <label for="versiSurat">Tingkat Kualitas Surat</label>
+            <select id="versiSurat" required>
+            <option value="standar">Standar (sederhana dan to the point)</option>
+            <option value="menengah">Menengah (cukup formal dan jelas)</option>
+            <option value="pro">Pro (bahasa formal dan meyakinkan)</option>
+          </select>
+        </div>
+        <!-- Form Inputan -->
+        <div class="input-group">
+          <label for="jenisSurat">Jenis Surat</label>
+          <select id="jenisSurat" required>
+            <option value="">-- Pilih Jenis Surat --</option>
+            <option value="Surat Pengunduran Diri">Surat Pengunduran Diri</option>
+            <option value="Surat Lamaran Kerja">Surat Lamaran Kerja</option>
+            <option value="Surat Permohonan Beasiswa">Surat Permohonan Beasiswa</option>
+            <option value="Surat Permohonan Magang">Surat Permohonan Magang</option>
+            <option value="Surat Izin Sekolah">Surat Izin Sekolah</option>
+            <option value="Surat Undangan Resmi">Surat Undangan Resmi</option>
+            <option value="Surat Kuasa">Surat Kuasa</option>
+            <option value="Surat Pernyataan">Surat Pernyataan</option>
+            <option value="Surat Penawaran Kerja Sama">Surat Penawaran Kerja Sama</option>
+            <option value="Surat Pemesanan Barang">Surat Pemesanan Barang</option>
+            <option value="Surat Perjanjian Kerja">Surat Perjanjian Kerja</option>
+            <option value="Surat Keterangan">Surat Keterangan</option>
+            <option value="Surat Pengantar">Surat Pengantar</option>
+            <option value="Surat Pernyataan Orang Tua">Surat Pernyataan Orang Tua</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for="nama">Nama Lengkap</label>
+          <input type="text" id="nama" required />
+        </div>
+
+        <div class="input-group">
+          <label for="tanggal">Tanggal</label>
+          <input type="date" id="tanggal" required />
+        </div>
+
+        <div class="input-group">
+          <label for="kepada">Kepada Siapa</label>
+          <input type="text" id="kepada" required />
+        </div>
+
+        <div class="input-group">
+          <label for="ukuran">Ukuran Kertas</label>
+          <select id="ukuran" required>
+            <option value="">Pilih ukuran</option>
+            <option value="A4">A4</option>
+            <option value="F4">F4</option>
+            <option value="Legal">Legal</option>
+          </select>
+        </div>
+
+        <div id="inputTambahan"></div>
+        <button type="submit">🚀 Buat Surat AI</button>
+      </form>
+    </div>
+
+    <!-- Hasil Surat -->
+    <div id="hasilWrapper" style="display:none;">
+      <div id="hasilSurat" contenteditable="true" spellcheck="false"></div>
+      <p style="text-align:center; font-size: 13px; color: #888; margin-top: 12px;">
+        ✏️ Anda dapat mengedit langsung isi surat sebelum mencetak atau mengunduh.
+      </p>
+    </div>
+
+    <!-- Loading -->
+    <div class="loading" id="loading" style="display:none;">
+      <div class="spinner"></div>
+      <p>AI sedang menyusun surat, mohon tunggu...</p>
+    </div>
+
+    <!-- Tombol Output -->
+    <div class="button-group">
+      <button id="btnCetak">🖨️ Cetak Surat</button>
+      <button id="btnDownloadPDF">⬇️ Download PDF</button>
+      <button id="btnDownloadWord">📄 Download Word</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</body>
+</html>
