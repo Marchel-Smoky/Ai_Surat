@@ -131,7 +131,7 @@ const data = {
 
 
   try {
-    const response = await fetch("https://replit.com/@victhorkamagi/AILSuratOtomatis", {
+    const response = await fetch("https://218e17ac-609c-4948-b316-f0d1e36ca716-00-2ohyvxmmhfw66.pike.replit.dev/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
